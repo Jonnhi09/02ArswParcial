@@ -9,9 +9,15 @@ import java.io.IOException;
 
 /**
  *
- * @author jonnhi
+ * @author Jonathan Prieto
  */
-public interface AccionesServices {
+public interface ClimaServicios {
 
-    public String obtenerAcciones(String rango, String nameAccion) throws IOException;
+    /**
+     *
+     * @param city the value of city
+     * @return
+     * @throws IOException
+     */
+    public String obtenerClimaCiudad(String city) throws IOException;
 }

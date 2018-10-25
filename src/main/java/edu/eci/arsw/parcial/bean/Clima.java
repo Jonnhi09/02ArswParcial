@@ -11,7 +11,13 @@ import java.io.IOException;
  *
  * @author Jonathan Prieto
  */
-public interface Acciones {
+public interface Clima {
 
-    public String obtenerAcciones(String rango, String nameAccion) throws IOException;
+    /**
+     *
+     * @param clima the value of clima
+     * @return
+     * @throws IOException
+     */
+    public String obtenerAcciones(String clima) throws IOException;
 }

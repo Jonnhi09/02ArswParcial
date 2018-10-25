@@ -5,7 +5,6 @@
  */
 package edu.eci.arsw.parcial.controller;
 
-import edu.eci.arsw.parcial.service.AccionesServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,24 +12,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import edu.eci.arsw.parcial.service.ClimaServicios;
 
 /**
  *
  * @author Jonathan Prieto
  */
 @RestController
-@RequestMapping("/acciones")
-public class AccionesApiController {
+@RequestMapping("/clima")
+public class ClimaApiController {
 
     @Autowired
-    private AccionesServices as;
+    private ClimaServicios cs;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/{rango}/{nombreAccion}")
-    public ResponseEntity<?> getAcciones(@PathVariable("rango") String rango, @PathVariable("nombreAccion") String nombreAccion) {
+    @RequestMapping(method = RequestMethod.GET, path = "/{city}")
+    public ResponseEntity<?> getAcciones(@PathVariable("city") String city) {
         try {
-            return new ResponseEntity<>(as.obtenerAcciones(rango, nombreAccion), HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(cs.obtenerClimaCiudad(city), HttpStatus.ACCEPTED);
         } catch (Exception e) {
-            return new ResponseEntity<>("Error al obtener las acciones del nombre y rango dado.", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Error al obtener el estado del clima de: " + city, HttpStatus.NOT_FOUND);
         }
     }
 }

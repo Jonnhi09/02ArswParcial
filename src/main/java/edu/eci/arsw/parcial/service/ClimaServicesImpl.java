@@ -5,25 +5,30 @@
  */
 package edu.eci.arsw.parcial.service;
 
-import edu.eci.arsw.parcial.bean.Acciones;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import edu.eci.arsw.parcial.bean.Clima;
 
 /**
  *
  * @author Jonathan Prieto
  */
 @Service
-public class AccionesServicesImpl implements AccionesServices {
+public class ClimaServicesImpl implements ClimaServicios {
 
     @Autowired
-    @Qualifier("Alpha")
-    Acciones acciones;
+    @Qualifier("OpenWeather")
+    Clima clima;
 
+    /**
+     *
+     * @param city the value of city
+     * @throws IOException
+     */
     @Override
-    public String obtenerAcciones(String rango, String nameAccion) throws IOException {
-        return acciones.obtenerAcciones(rango, nameAccion);
+    public String obtenerClimaCiudad(String city) throws IOException {
+        return clima.obtenerAcciones(city);
     }
 }
