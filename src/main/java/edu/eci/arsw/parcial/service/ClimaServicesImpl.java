@@ -12,12 +12,16 @@ import org.springframework.stereotype.Service;
 import edu.eci.arsw.parcial.bean.Clima;
 
 /**
+ * Implementación de los servicios expuestos
  *
  * @author Jonathan Prieto
  */
 @Service
 public class ClimaServicesImpl implements ClimaServicios {
 
+    /**
+     * Implementación con inversión de control para uso de otras apis.
+     */
     @Autowired
     @Qualifier("OpenWeather")
     Clima clima;
@@ -25,7 +29,7 @@ public class ClimaServicesImpl implements ClimaServicios {
     /**
      *
      * @param city the value of city
-     * @throws IOException
+     * @throws IOException si no existe el nombre de la ciudad.
      */
     @Override
     public String obtenerClimaCiudad(String city) throws IOException {

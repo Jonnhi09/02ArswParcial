@@ -8,6 +8,7 @@ package edu.eci.arsw.parcial.service;
 import java.io.IOException;
 
 /**
+ * Servicios expuestos
  *
  * @author Jonathan Prieto
  */
@@ -15,9 +16,9 @@ public interface ClimaServicios {
 
     /**
      *
-     * @param city the value of city
-     * @return
-     * @throws IOException
+     * @param city Nombre de la ciudad a consultar su estado de clima
+     * @return String, json con la información del estado del clima de la ciudad.
+     * @throws IOException si el nombre de la ciudad no es valido
      */
     public String obtenerClimaCiudad(String city) throws IOException;
 }

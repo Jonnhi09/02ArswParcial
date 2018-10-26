@@ -15,20 +15,25 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
+ * Api OpenWeather
  *
  * @author Jonathan Prieto
  */
 @Service("OpenWeather")
 public class ClimaOpenWeather implements Clima {
 
+    /**
+     * Implementación de cache de manera concurrente.
+     */
     private ConcurrentHashMap<String, String> cache = new ConcurrentHashMap<String, String>();
     Date date = new Date();
     int minutos = 0;
 
     /**
+     * Obtener el contenido de la url especificada con la ciudad dada.
      *
-     * @param clima the value of clima
-     * @throws IOException
+     * @param clima nombre de la ciudad.
+     * @throws IOException si el nombre de la ciudad no existe.
      */
     @Override
     public String obtenerAcciones(String clima) throws IOException {

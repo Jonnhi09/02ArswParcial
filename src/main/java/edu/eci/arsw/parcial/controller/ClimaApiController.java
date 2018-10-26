@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.eci.arsw.parcial.service.ClimaServicios;
 
 /**
+ * ApiRest que permite acceder a un conjunto de datos por medio del protocolo
+ * http, usando los verbos del mismo.
  *
  * @author Jonathan Prieto
  */
