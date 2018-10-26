@@ -9,7 +9,7 @@ La siguiente aplicación expone un servicio que permite al usuario obtener el es
 ![](img/packets.png)
 - La arquitectura principal se fundamenta en MVC.
 
-![](img/index.png)
+![](img/model.png)
 - Como se puede ver en la imágen anterior, hay un controlador que se encarga de gestionar los servicios que ofrece una Api (ClimaOpenWeather) por medio de inyección de dependencias. Además hay una interfaz clima a la que se podrían implementar otras Apis, permitiendo que la aplicación se pueda escalar, extender y no depender de una en caso que esta falle. para esto se puede usar Inversión de control, para que al momento de consultar la ciudad también se pueda seleccionar la Api que se desea usar.
 
 ![](img/index.png)
