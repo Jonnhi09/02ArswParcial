@@ -1,7 +1,7 @@
 # ARSW - 2 Parcial
 ## Jonathan Prieto
 ### Aplicación en Heroku
- - [![Link no disponible, correr localmente]()
+ - [Link no disponible, correr localmente]()
 ---
 #### Descripción arquitectura
 La siguiente aplicación expone un servicio que permite al usuario obtener el estado del clima de una ciudad dada por el mismo.
